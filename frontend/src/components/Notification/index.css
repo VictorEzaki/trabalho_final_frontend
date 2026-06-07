@@ -1,0 +1,60 @@
+.notification {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: min(360px, calc(100vw - 48px));
+  padding: 14px 16px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: var(--color-surface);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.16);
+}
+
+.notification p {
+  flex: 1;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.notification button {
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.notification button:hover {
+  background: rgba(15, 23, 42, 0.08);
+}
+
+.notification-success {
+  border-color: rgba(22, 163, 74, 0.25);
+  background: #f0fdf4;
+}
+
+.notification-success p,
+.notification-success button {
+  color: var(--color-success);
+}
+
+.notification-error {
+  border-color: rgba(220, 38, 38, 0.25);
+  background: #fef2f2;
+}
+
+.notification-error p,
+.notification-error button {
+  color: var(--color-danger);
+}

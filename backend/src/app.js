@@ -1,4 +1,6 @@
 const express = require("express");
+const cors = require('cors');
+const app = express();
 
 const sequelize = require('./models/database.js');
 require('./models/associations');
@@ -7,8 +9,7 @@ const ExpenseRouter = require('./router/expense.js');
 const UserRouter = require('./router/user.js');
 const CategoryRouter = require('./router/category.js');
 
-const app = express();
-
+app.use(cors());
 app.use(express.json());
 
 app.use('/api', ExpenseRouter);
@@ -25,8 +26,8 @@ async function main() {
     console.log('Sincronização com banco de dados realizada.');
     console.log('Conexão com o banco de dados estabelecida com sucesso.');
     
-    const server = app.listen(1080, () => {
-      console.info(`✅ Servidor rodando na porta 1080`);
+    const server = app.listen(3000, () => {
+      console.info(`✅ Servidor rodando na porta 3000`);
     });
 
     server.on('error', (error) => {
