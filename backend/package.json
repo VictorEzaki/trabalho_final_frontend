@@ -15,7 +15,8 @@
   "type": "commonjs",
   "main": "./src/app.js",
   "scripts": {
-    "dev": "node ./src/app.js"
+    "dev": "node ./src/app.js",
+    "watch": "nodemon ./src/app.js"
   },
   "dependencies": {
     "dotenv": "^17.4.2",
@@ -25,6 +26,7 @@
     "sequelize": "^6.37.8"
   },
   "devDependencies": {
+    "nodemon": "^3.1.14",
     "sequelize-cli": "^6.6.5"
   }
 }
