@@ -63,22 +63,23 @@ class ExpenseModel {
         });
     }
     
-    async create(title, amount, categoryId, date, description) {
-        return db.create({title, amount, categoryId, date, description})
+    async create(amount, date, description, status, categoryId, userId) {
+        return db.create({amount, date, description, status, categoryId, userId})
     }
     
-    async update(title, amount, categoryId, date, description, id) {
+    async update(amount, date, description, status, categoryId, userId, id) {
         const expense = await db.findByPk(id);
         
         if (!expense) {
             return null;
         }
         
-        expense.title = title;
         expense.amount = amount;
-        expense.categoryId = categoryId;
         expense.date = date;
         expense.description = description;
+        expense.satus = satus;
+        expense.categoryId = categoryId;
+        expense.userId = userId;
         
         await expense.save();
         
